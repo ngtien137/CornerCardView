@@ -5,6 +5,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import kotlin.math.abs
 
 class CornerCard @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -50,7 +51,7 @@ class CornerCard @JvmOverloads constructor(
                     .toFloat()
 
             shadowRadius =
-                ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_radius, 0).toFloat()
+                abs(ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_radius, 0).toFloat())
             shadowDx = ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_dx, 0).toFloat()
             shadowDy = ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_dy, 0).toFloat()
             if (shadowRadius > 0f) {
@@ -75,10 +76,10 @@ class CornerCard @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         pathView.reset()
         canvas?.let {
-            val rightOfView = rectView.right - shadowDx - shadowRadius
-            var leftOfView = rectView.left + shadowDx + shadowRadius
-            var topOfView = rectView.top + shadowDy + shadowRadius
-            val bottomOfView = rectView.bottom - shadowDy - shadowRadius
+            val rightOfView = rectView.right - shadowRadius - abs(shadowDx)
+            var leftOfView = rectView.left + shadowRadius + abs(shadowDx)
+            var topOfView = rectView.top + shadowRadius + abs(shadowDy)
+            val bottomOfView = rectView.bottom - shadowRadius - abs(shadowDy)
             if (topOfView<rectView.top)
                 topOfView = rectView.top
             if (leftOfView<rectView.left)

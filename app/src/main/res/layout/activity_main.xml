@@ -11,7 +11,7 @@
         app:cc_corner_top_left="40dp"
         app:cc_corner_bottom_right="40dp"
         app:cc_shadow_dx="2dp"
-        app:cc_shadow_dy="2dp"
+        app:cc_shadow_dy="-2dp"
         app:cc_shadow_radius="2dp"
         android:layout_margin="4dp"
         android:layout_width="match_parent"
