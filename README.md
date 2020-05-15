@@ -1,1 +1,3 @@
-"# CornerCardView" 
+# CornerCardView
+
+##Getting started
