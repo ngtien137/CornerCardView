@@ -35,6 +35,7 @@ implementation 'com.github.ngtien137:CornerCardView:Tag'
     app:cc_corner_bottom_right="40dp"
     app:cc_corner_top_left="40dp"
     app:cc_corner_top_right="0dp"
+    app:cc_background_color="#f00"
     app:cc_shadow_dx="2dp"
     app:cc_shadow_dy="-2dp"
     app:cc_shadow_radius="2dp">
