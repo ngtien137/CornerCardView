@@ -8,5 +8,6 @@
         <attr name="cc_shadow_radius" format="dimension"/>
         <attr name="cc_shadow_dx" format="dimension"/>
         <attr name="cc_shadow_dy" format="dimension"/>
+        <attr name="cc_background_color" format="color"/>
     </declare-styleable>
 </resources>

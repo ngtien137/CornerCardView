@@ -54,6 +54,7 @@ class CornerCard @JvmOverloads constructor(
                 abs(ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_radius, 0).toFloat())
             shadowDx = ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_dx, 0).toFloat()
             shadowDy = ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_dy, 0).toFloat()
+            paintCard.color = ta.getColor(R.styleable.CornerCard_cc_background_color,Color.BLACK)
             if (shadowRadius > 0f) {
                 paintCard.setShadowLayer(
                     shadowRadius,
