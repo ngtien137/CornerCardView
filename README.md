@@ -23,7 +23,8 @@ implementation 'com.github.ngtien137:CornerCardView:Tag'
 
 ``` 
 
-TAG is the version of library. If you don't know, remove it with + 
+* TAG is the version of library. If you don't know, remove it with + 
+* Or you can get version of this module [here](https://jitpack.io/#ngtien137/CornerCardView)
 ## All Attributes 
 ``` 
   <com.lhd.views.cornercard.CornerCard
