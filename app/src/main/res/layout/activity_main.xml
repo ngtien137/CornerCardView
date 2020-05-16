@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <com.lhd.views.cornercard.CornerCard
-        app:cc_corner_top_left="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="4dp"
+        app:cc_corner_bottom_left="0dp"
         app:cc_corner_bottom_right="40dp"
+        app:cc_corner_top_left="40dp"
+        app:cc_corner_top_right="0dp"
         app:cc_shadow_dx="2dp"
         app:cc_shadow_dy="-2dp"
-        app:cc_shadow_radius="2dp"
-        android:layout_margin="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
+        app:cc_shadow_radius="2dp">
+
         <ImageView
-            android:background="#f00"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#f00" />
     </com.lhd.views.cornercard.CornerCard>
 
 </LinearLayout>
