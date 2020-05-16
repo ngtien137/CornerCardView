@@ -24,7 +24,7 @@ implementation 'com.github.ngtien137:CornerCardView:Tag'
 ``` 
 
 TAG is the version of library. If you don't know, remove it with + 
-** All Attributes 
+## All Attributes 
 ``` 
   <com.lhd.views.cornercard.CornerCard
     android:layout_width="match_parent"
