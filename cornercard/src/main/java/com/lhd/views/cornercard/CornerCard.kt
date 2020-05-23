@@ -67,10 +67,10 @@ class CornerCard @JvmOverloads constructor(
         }
     }
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val widthSize = MeasureSpec.getSize(widthMeasureSpec)
-        val heightSize = MeasureSpec.getSize(heightMeasureSpec)
-        rectView.set(0f, 0f, widthSize.toFloat(), heightSize.toFloat())
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        rectView.set(0f, 0f, w.toFloat(), h.toFloat())
+        pathView.reset()
         val rightOfView = rectView.right - shadowRadius - abs(shadowDx)
         var leftOfView = rectView.left + shadowRadius + abs(shadowDx)
         var topOfView = rectView.top + shadowRadius + abs(shadowDy)
@@ -91,7 +91,6 @@ class CornerCard @JvmOverloads constructor(
         pathView.lineTo(leftOfView + cornerBottomLeft, bottomOfView)
         pathView.quadTo(leftOfView, bottomOfView, leftOfView, bottomOfView - cornerBottomLeft)
         pathView.lineTo(leftOfView, cornerTopLeft)
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 
     override fun onDraw(canvas: Canvas?) {
