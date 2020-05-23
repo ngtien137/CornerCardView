@@ -71,32 +71,31 @@ class CornerCard @JvmOverloads constructor(
         val widthSize = MeasureSpec.getSize(widthMeasureSpec)
         val heightSize = MeasureSpec.getSize(heightMeasureSpec)
         rectView.set(0f, 0f, widthSize.toFloat(), heightSize.toFloat())
+        val rightOfView = rectView.right - shadowRadius - abs(shadowDx)
+        var leftOfView = rectView.left + shadowRadius + abs(shadowDx)
+        var topOfView = rectView.top + shadowRadius + abs(shadowDy)
+        val bottomOfView = rectView.bottom - shadowRadius - abs(shadowDy)
+        if (topOfView<rectView.top)
+            topOfView = rectView.top
+        if (leftOfView<rectView.left)
+            leftOfView = rectView.left
+        pathView.moveTo(leftOfView, cornerTopLeft)
+        pathView.quadTo(leftOfView, topOfView, leftOfView + cornerTopLeft, topOfView)
+        pathView.lineTo(rightOfView - cornerTopRight, topOfView)
+        pathView.quadTo(rightOfView, topOfView, rightOfView, topOfView + cornerTopRight)
+        pathView.lineTo(rightOfView, bottomOfView - cornerBottomRight)
+        pathView.quadTo(
+            rightOfView, bottomOfView,
+            rightOfView - cornerBottomRight, bottomOfView
+        )
+        pathView.lineTo(leftOfView + cornerBottomLeft, bottomOfView)
+        pathView.quadTo(leftOfView, bottomOfView, leftOfView, bottomOfView - cornerBottomLeft)
+        pathView.lineTo(leftOfView, cornerTopLeft)
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 
     override fun onDraw(canvas: Canvas?) {
-        pathView.reset()
         canvas?.let {
-            val rightOfView = rectView.right - shadowRadius - abs(shadowDx)
-            var leftOfView = rectView.left + shadowRadius + abs(shadowDx)
-            var topOfView = rectView.top + shadowRadius + abs(shadowDy)
-            val bottomOfView = rectView.bottom - shadowRadius - abs(shadowDy)
-            if (topOfView<rectView.top)
-                topOfView = rectView.top
-            if (leftOfView<rectView.left)
-                leftOfView = rectView.left
-            pathView.moveTo(leftOfView, cornerTopLeft)
-            pathView.quadTo(leftOfView, topOfView, leftOfView + cornerTopLeft, topOfView)
-            pathView.lineTo(rightOfView - cornerTopRight, topOfView)
-            pathView.quadTo(rightOfView, topOfView, rightOfView, topOfView + cornerTopRight)
-            pathView.lineTo(rightOfView, bottomOfView - cornerBottomRight)
-            pathView.quadTo(
-                rightOfView, bottomOfView,
-                rightOfView - cornerBottomRight, bottomOfView
-            )
-            pathView.lineTo(leftOfView + cornerBottomLeft, bottomOfView)
-            pathView.quadTo(leftOfView, bottomOfView, leftOfView, bottomOfView - cornerBottomLeft)
-            pathView.lineTo(leftOfView, cornerTopLeft)
             it.drawPath(pathView, paintCard)
             canvas.clipPath(pathView)
         }
