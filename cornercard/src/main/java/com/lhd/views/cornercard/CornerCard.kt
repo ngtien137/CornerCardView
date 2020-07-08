@@ -26,6 +26,7 @@ class CornerCard @JvmOverloads constructor(
     private var shadowRadius = 0f
     private var shadowDx = 0f
     private var shadowDy = 0f
+    private var shadowColor = Color.BLACK
 
     private val paintCard = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.BLACK
@@ -55,12 +56,13 @@ class CornerCard @JvmOverloads constructor(
             shadowDx = ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_dx, 0).toFloat()
             shadowDy = ta.getDimensionPixelSize(R.styleable.CornerCard_cc_shadow_dy, 0).toFloat()
             paintCard.color = ta.getColor(R.styleable.CornerCard_cc_background_color,Color.BLACK)
+            shadowColor = ta.getColor(R.styleable.CornerCard_cc_shadow_color, Color.BLACK)
             if (shadowRadius > 0f) {
                 paintCard.setShadowLayer(
                     shadowRadius,
                     shadowDx,
                     shadowDy,
-                    Color.parseColor("#000000")
+                    shadowColor
                 )
             }
             ta.recycle()

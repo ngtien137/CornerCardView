@@ -9,5 +9,6 @@
         <attr name="cc_shadow_dx" format="dimension"/>
         <attr name="cc_shadow_dy" format="dimension"/>
         <attr name="cc_background_color" format="color"/>
+        <attr name="cc_shadow_color" format="color"/>
     </declare-styleable>
 </resources>
