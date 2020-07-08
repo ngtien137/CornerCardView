@@ -3,6 +3,7 @@ package com.lhd.views.cornercard
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import kotlin.math.abs
@@ -34,9 +35,7 @@ class CornerCard @JvmOverloads constructor(
     }
 
     init {
-        if (parent is ViewGroup?) {
-            (parent as ViewGroup?)?.clipChildren = false
-        }
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null)
         setWillNotDraw(false)
         attrs?.let {
             val ta = context.obtainStyledAttributes(it, R.styleable.CornerCard)
