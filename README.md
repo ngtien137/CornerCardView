@@ -7,7 +7,7 @@
 * Still have a problem with anti aliasing
 * Add maven in your root build.gradle at the end of repositories:
 
-``` 
+```gradle 
 allprojects { 
   repositories { 
     ... 
@@ -18,15 +18,22 @@ allprojects {
 
 * Add the dependency to file build.gradle(Module:app): 
 
-``` 
+```gradle
 implementation 'com.github.ngtien137:CornerCardView:Tag' 
 
 ``` 
 
 * TAG is the version of library. If you don't know, remove it with + 
+
+* News version:
+```gradle
+  implementation 'com.github.ngtien137:CornerCardView:1.5'
+  implementation 'com.github.ngtien137:CornerCardView:1.3.oval'
+  implementation 'com.github.ngtien137:CornerCardView:1.5.flex'
+```
 * Or you can get version of this module [here](https://jitpack.io/#ngtien137/CornerCardView)
 ## All Attributes 
-``` 
+```gradle 
   <com.lhd.views.cornercard.CornerCard
     android:layout_width="match_parent"
     android:layout_height="200dp"
