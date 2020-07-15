@@ -80,7 +80,7 @@ class CornerCard @JvmOverloads constructor(
             topOfView = rectView.top
         if (leftOfView<rectView.left)
             leftOfView = rectView.left
-        pathView.moveTo(leftOfView, cornerTopLeft)
+        pathView.moveTo(leftOfView, topOfView + cornerTopLeft)
         pathView.quadTo(leftOfView, topOfView, leftOfView + cornerTopLeft, topOfView)
         pathView.lineTo(rightOfView - cornerTopRight, topOfView)
         pathView.quadTo(rightOfView, topOfView, rightOfView, topOfView + cornerTopRight)
@@ -91,7 +91,7 @@ class CornerCard @JvmOverloads constructor(
         )
         pathView.lineTo(leftOfView + cornerBottomLeft, bottomOfView)
         pathView.quadTo(leftOfView, bottomOfView, leftOfView, bottomOfView - cornerBottomLeft)
-        pathView.lineTo(leftOfView, cornerTopLeft)
+        pathView.close()
     }
 
     override fun onDraw(canvas: Canvas?) {
