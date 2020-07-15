@@ -7,17 +7,18 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <com.lhd.views.cornercard.CornerCard
+    <com.lhd.views.cornercard.FlexibleCornerCardView
         app:cc_background_color="#f00"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_margin="4dp"
         app:cc_shadow_dx="2dp"
         app:cc_shadow_dy="-2dp"
+        app:cc_corner_radius="32dp"
         app:cc_shadow_color="#ff0"
         app:cc_shadow_radius="2dp">
 
 
-    </com.lhd.views.cornercard.CornerCard>
+    </com.lhd.views.cornercard.FlexibleCornerCardView>
 
 </LinearLayout>

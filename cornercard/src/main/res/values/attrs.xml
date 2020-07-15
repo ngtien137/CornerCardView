@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CornerCard">
+    <declare-styleable name="FlexibleCornerCardView">
+        <attr name="cc_corner_radius" format="dimension"/>
         <attr name="cc_shadow_radius" format="dimension"/>
         <attr name="cc_shadow_dx" format="dimension"/>
         <attr name="cc_shadow_dy" format="dimension"/>
